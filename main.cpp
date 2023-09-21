@@ -8,6 +8,9 @@ using namespace std;
 
 int main()
 {
+    int x;
+    cin>>x;
+    cout<<x<<'\n';
     cout<<"lol\n";
     return 0;
 }
