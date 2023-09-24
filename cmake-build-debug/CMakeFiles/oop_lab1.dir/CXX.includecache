@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/main.cpp
+Date.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
 iostream
-/Users/viktoriyabilyk/CLionProjects/oop_lab1/iostream
+-
 
