@@ -6,13 +6,33 @@
 #define DATE_H
 
 
-class Date {
+class Year{
+protected:
+    int year;
 public:
-    int year, month, day;
-    Date(int y, int m, int d);
-    bool is_date_correct();
-
+    Year(int year):year(year){}
 };
-
-
+class Month: public Year
+{
+protected:
+    int month;
+public:
+    Month(int year,int month):Year(year),month(month){}
+};
+class Day: public Month
+{
+protected:
+    int day;
+public:
+    Day(int year,int month,int day):Month(year,month),day(day){}
+    bool is_date_correct();
+};
+class Time: public Day
+{
+protected:
+    int hours,minute,second;
+public:
+    Time(int year,int month,int day,int hours,int minute,int second)
+    :Day(year,month,day),hours(hours),minute(minute),second(second){}
+};
 #endif //DATE_H

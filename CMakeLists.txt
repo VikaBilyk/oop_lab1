@@ -4,4 +4,4 @@ project(oop_lab1)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(oop_lab1
-        main.cpp)
+        main.cpp Date.cpp)
