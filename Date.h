@@ -12,6 +12,9 @@ Date(int y, int m, int d, int h, int min, int sec);
 static bool is_date_correct(int year, int month, int day);
 
     bool is_date_correct();
+
+    int getWeekNumber();
 };
+
 
 #endif //DATE_H

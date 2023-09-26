@@ -19,4 +19,11 @@ bool Date::is_date_correct() {
             return day <= days_in_month[month];
 }
 
+int Date::getWeekNumber(){
+    int a = (14 - month) / 12;
+    int y = year - a;
+    int m = month + 12 * a - 2;
+    return (day + y + y/4 - y/100 + y/400 + (31 * m) / 12) % 7;
+}
+
 
