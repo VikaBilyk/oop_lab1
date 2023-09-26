@@ -90,9 +90,6 @@
 		<Unit filename="/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h">
 			<Option target="oop_lab1"/>
 		</Unit>
-		<Unit filename="/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.cpp">
-			<Option target="oop_lab1"/>
-		</Unit>
 		<Unit filename="/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h">
 			<Option target="oop_lab1"/>
 		</Unit>

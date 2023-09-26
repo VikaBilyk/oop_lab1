@@ -4,6 +4,15 @@
 CMakeFiles/oop_lab1.dir/Date.cpp.o: ../Date.cpp
 CMakeFiles/oop_lab1.dir/Date.cpp.o: ../Date.h
 
+CMakeFiles/oop_lab1.dir/Event.cpp.o: ../Date.h
+CMakeFiles/oop_lab1.dir/Event.cpp.o: ../Event.cpp
+CMakeFiles/oop_lab1.dir/Event.cpp.o: ../Event.h
+
+CMakeFiles/oop_lab1.dir/Time.cpp.o: ../Time.cpp
+CMakeFiles/oop_lab1.dir/Time.cpp.o: ../Time.h
+
 CMakeFiles/oop_lab1.dir/main.cpp.o: ../Date.h
+CMakeFiles/oop_lab1.dir/main.cpp.o: ../Event.h
+CMakeFiles/oop_lab1.dir/main.cpp.o: ../Time.h
 CMakeFiles/oop_lab1.dir/main.cpp.o: ../main.cpp
 

@@ -197,33 +197,6 @@ Event.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.s
 .PHONY : Event.cpp.s
 
-SortingStrategy.o: SortingStrategy.cpp.o
-
-.PHONY : SortingStrategy.o
-
-# target to build an object file
-SortingStrategy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.o
-.PHONY : SortingStrategy.cpp.o
-
-SortingStrategy.i: SortingStrategy.cpp.i
-
-.PHONY : SortingStrategy.i
-
-# target to preprocess a source file
-SortingStrategy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.i
-.PHONY : SortingStrategy.cpp.i
-
-SortingStrategy.s: SortingStrategy.cpp.s
-
-.PHONY : SortingStrategy.s
-
-# target to generate assembly for a file
-SortingStrategy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.s
-.PHONY : SortingStrategy.cpp.s
-
 Time.o: Time.cpp.o
 
 .PHONY : Time.o
@@ -293,9 +266,6 @@ help:
 	@echo "... Event.o"
 	@echo "... Event.i"
 	@echo "... Event.s"
-	@echo "... SortingStrategy.o"
-	@echo "... SortingStrategy.i"
-	@echo "... SortingStrategy.s"
 	@echo "... Time.o"
 	@echo "... Time.i"
 	@echo "... Time.s"

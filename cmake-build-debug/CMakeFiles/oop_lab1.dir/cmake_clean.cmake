@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/oop_lab1.dir/Date.cpp.o"
   "CMakeFiles/oop_lab1.dir/Event.cpp.o"
-  "CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.o"
   "CMakeFiles/oop_lab1.dir/Time.cpp.o"
   "CMakeFiles/oop_lab1.dir/main.cpp.o"
   "oop_lab1"

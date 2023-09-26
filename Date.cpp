@@ -20,6 +20,7 @@ bool Date::is_date_correct() {
 }
 
 int Date::getWeekNumber(){
+
     int a = (14 - month) / 12;
     int y = year - a;
     int m = month + 12 * a - 2;

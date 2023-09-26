@@ -12,9 +12,25 @@ Date.h
 
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
 
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.cpp
+Event.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+string
+-
+Date.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.h
+
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/main.cpp
 iostream
 -
 Date.h
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+Time.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.h
+Event.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
 
