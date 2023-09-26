@@ -3,19 +3,16 @@
 //
 #include <iostream>
 #include "Date.h"
+#include "Time.h"
+#include "Event.h"
+
 
 using namespace std;
 
 int main()
 {
 
-    cout << "write date\n";
-    int year,month,day;
-    cin >> year >> month >> day;
 
-         Day date (year,month,day);
-
-    cout << date.is_date_correct();
 
     return 0;
 }

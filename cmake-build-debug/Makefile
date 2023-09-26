@@ -170,6 +170,87 @@ Date.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Date.cpp.s
 .PHONY : Date.cpp.s
 
+Event.o: Event.cpp.o
+
+.PHONY : Event.o
+
+# target to build an object file
+Event.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.o
+.PHONY : Event.cpp.o
+
+Event.i: Event.cpp.i
+
+.PHONY : Event.i
+
+# target to preprocess a source file
+Event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.i
+.PHONY : Event.cpp.i
+
+Event.s: Event.cpp.s
+
+.PHONY : Event.s
+
+# target to generate assembly for a file
+Event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.s
+.PHONY : Event.cpp.s
+
+SortingStrategy.o: SortingStrategy.cpp.o
+
+.PHONY : SortingStrategy.o
+
+# target to build an object file
+SortingStrategy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.o
+.PHONY : SortingStrategy.cpp.o
+
+SortingStrategy.i: SortingStrategy.cpp.i
+
+.PHONY : SortingStrategy.i
+
+# target to preprocess a source file
+SortingStrategy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.i
+.PHONY : SortingStrategy.cpp.i
+
+SortingStrategy.s: SortingStrategy.cpp.s
+
+.PHONY : SortingStrategy.s
+
+# target to generate assembly for a file
+SortingStrategy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/SortingStrategy.cpp.s
+.PHONY : SortingStrategy.cpp.s
+
+Time.o: Time.cpp.o
+
+.PHONY : Time.o
+
+# target to build an object file
+Time.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Time.cpp.o
+.PHONY : Time.cpp.o
+
+Time.i: Time.cpp.i
+
+.PHONY : Time.i
+
+# target to preprocess a source file
+Time.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Time.cpp.i
+.PHONY : Time.cpp.i
+
+Time.s: Time.cpp.s
+
+.PHONY : Time.s
+
+# target to generate assembly for a file
+Time.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Time.cpp.s
+.PHONY : Time.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -209,6 +290,15 @@ help:
 	@echo "... Date.o"
 	@echo "... Date.i"
 	@echo "... Date.s"
+	@echo "... Event.o"
+	@echo "... Event.i"
+	@echo "... Event.s"
+	@echo "... SortingStrategy.o"
+	@echo "... SortingStrategy.i"
+	@echo "... SortingStrategy.s"
+	@echo "... Time.o"
+	@echo "... Time.i"
+	@echo "... Time.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
