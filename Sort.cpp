@@ -1,26 +1,33 @@
 #include "Sort.h"
 
+// Функція порівняння для сортування за роком
 bool SortDate::compareByYear(const Date& date1, const Date& date2) {
     return date1.getYear() < date2.getYear();
 }
 
+// Функція порівняння для сортування за місяцем
 bool SortDate::compareByMonth(const Date& date1, const Date& date2) {
     return date1.getMonth() < date2.getMonth();
-}
 
+}
+// Функція порівняння для сортування за днем
 bool SortDate::compareByDay(const Date& date1, const Date& date2) {
     return date1.getDay() < date2.getDay();
-}
 
+}
+// Функція порівняння для сортування за годинами
 bool SortDate::compareByHours(const Date& date1, const Date& date2) {
     return date1.getHours() < date2.getHours();
-}
 
+}
+// Функція сортування вставками
 void SortDate::insertionSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
     int n = dates.size();
     for (int i = 1; i < n; i++) {
         Date key = dates[i];
         int j = i - 1;
+
+        // Порівнюємо кожний елемент з елементами ліворуч і вставляємо на відповідне місце
         while (j >= 0 && compareFunc(dates[j], key)) {
             dates[j + 1] = dates[j];
             j--;
@@ -29,10 +36,12 @@ void SortDate::insertionSort(vector<Date>& dates, bool (*compareFunc)(const Date
     }
 }
 
+// Функція швидкого сортування
 void SortDate::quickSort(std::vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
     quickSortRecursive(dates, 0, dates.size() - 1, compareFunc);
 }
 
+// Рекурсивна функція для швидкого сортування
 void SortDate::quickSortRecursive(std::vector<Date>& dates, int low, int high, bool (*compareFunc)(const Date&, const Date&)) {
     if (low < high) {
         int pivotIndex = partition(dates, low, high, compareFunc);
@@ -41,6 +50,7 @@ void SortDate::quickSortRecursive(std::vector<Date>& dates, int low, int high, b
     }
 }
 
+// Функція розбиття для швидкого сортування
 int SortDate::partition(vector<Date>& dates, int low, int high, bool (*compareFunc)(const Date&, const Date&)) {
     Date pivot = dates[high];
     int i = low - 1;
@@ -54,10 +64,12 @@ int SortDate::partition(vector<Date>& dates, int low, int high, bool (*compareFu
     return i + 1;
 }
 
+// Функція сортування злиттям
 void SortDate::mergeSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
     mergeSortRecursive(dates, 0, dates.size() - 1, compareFunc);
 }
 
+// Рекурсивна функція для сортування злиттям
 void SortDate::mergeSortRecursive(vector<Date>& dates, int low, int high, bool (*compareFunc)(const Date&, const Date&)) {
     if (low < high) {
         int mid = low + (high - low) / 2;
@@ -67,6 +79,7 @@ void SortDate::mergeSortRecursive(vector<Date>& dates, int low, int high, bool (
     }
 }
 
+// Функція об'єднання для сортування злиттям
 void SortDate::merge(vector<Date>& dates, int low, int mid, int high, bool (*compareFunc)(const Date&, const Date&)) {
     int n1 = mid - low + 1;
     int n2 = high - mid;
@@ -109,6 +122,7 @@ void SortDate::merge(vector<Date>& dates, int low, int mid, int high, bool (*com
     }
 }
 
+// Функція сортування бульбашкою
 void SortDate::bubbleSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
     int n = dates.size();
     bool swapped;

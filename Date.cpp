@@ -19,9 +19,8 @@ bool Date::isDateValid(int year, int month, int day) {
     } else if (day >= daysInMonth[month - 1]) {
         return false;
     }
+    return true;}
 
-    return true;
-}
 bool Date::isDateValid(){
     if (year < 1 || month < 1 || month > 12 || day < 1)
         return false;
@@ -31,20 +30,18 @@ bool Date::isDateValid(){
     } else if (day >= daysInMonth[month - 1]) {
         return false;
     }
-
-    return true;
-}
+    return true;}
 
 bool Date::isTimeValid() const {
-    return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);
-}
+    return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);}
+
 bool Date::isTimeValid(int hours, int minutes, int seconds) const {
-    return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);
-}
+    return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);}
+
 void Date::timeDifferencePrint()const{
     cout << "Time Difference: "<< year << "-" << month << "-" << day << " " << hours << ":" << minutes
-    << ":" << seconds<<'\n';
-}
+    << ":" << seconds<<'\n';}
+
 Date Date::timeDifference(const Date& otherDate) const {
     int diffYears = year - otherDate.year;
     int diffMonths = month - otherDate.month;
@@ -68,7 +65,7 @@ Date Date::timeDifference(const Date& otherDate) const {
     }
     while (diffDays < 0) {
         diffMonths--;
-        int lastMonthDays = daysInMonth[(month - 2 + 12) % 12];
+        int lastMonthDays = daysInMonth[(month - 1 + 12) % 12];
         diffDays += lastMonthDays;
     }
     while (diffMonths < 0) {
@@ -76,11 +73,10 @@ Date Date::timeDifference(const Date& otherDate) const {
         diffMonths += 12;
     }
 
-    // Створюємо та повертаємо новий об'єкт Date з різницею
+    // Створення та повернення нового об'єкту Date з різницею
     Date difference(diffYears, diffMonths, diffDays, diffHours, diffMinutes, diffSeconds);
     difference.timeDifferencePrint();
-    return difference;
-}
+    return difference;}
 
 void Date::addTimeDifference(const Date& timeDiff) {
     year += timeDiff.year;
@@ -138,9 +134,9 @@ void Date::subtractTimeDifference(const Date& timeDiff) {
         month--;
         if (month < 1) {
             year--;
-            month = 12;
+            month += 12;
         }
-        int lastMonthDays = daysInMonth[(month - 1 + 12) % 12];
+        int lastMonthDays = daysInMonth[(month + 12) % 12];
         day += lastMonthDays;
     }
     while (month < 1) {
@@ -154,14 +150,12 @@ int Date::getDayOfWeek() const {
     int y = year - a;
     int m = month + 12 * a - 2;
     int dayOfWeek = (day + y + y / 4 - y / 100 + y / 400 + (31 * m) / 12) % 7;
-    return dayOfWeek;
-}
+    return dayOfWeek;}
 
 int Date::getWeekOfMonth() const {
     int dayOfWeek = getDayOfWeek();
     int weekNumber = (day + dayOfWeek - 1) / 7 + 1;
-    return weekNumber;
-}
+    return weekNumber;}
 
 int Date::getWeekOfYear() const {
     int dayOfWeek = getDayOfWeek();
@@ -172,38 +166,31 @@ int Date::getWeekOfYear() const {
     dayOfYear += day;
 
     int weekNumber = (dayOfYear + dayOfWeek - 1) / 7 + 1;
-    return weekNumber;
-}
+    return weekNumber;}
 
 
 int Date::getYear() const {
-    return year;
-}
+    return year;}
 
 int Date::getMonth() const {
-    return month;
-}
+    return month;}
 
 int Date::getDay() const {
-    return day;
-}
+    return day;}
 
 int Date::getHours() const {
-    return hours;
-}
+    return hours;}
 
 int Date::getMinutes() const {
-    return minutes;
-}
+    return minutes;}
 
 int Date::getSeconds() const {
-    return seconds;
-}
+    return seconds;}
 
 ostream& operator<<(std::ostream& os, const Date& date) {
     os << date.getYear() << "-" << date.getMonth() << "-" << date.getDay() << "; "
-       <<"week num in mon: " << date.getWeekOfMonth() << "; " // Виводимо номер тижня в місяці
-       << Date::daysOfWeek[date.getDayOfWeek()] << "; " // Виводимо назву дня тижня
+       <<"week num in mon: " << date.getWeekOfMonth() << "; "
+       << Date::daysOfWeek[date.getDayOfWeek()] << "; "
        << "Week num in year: " << date.getWeekOfYear() << ";"
        << " time: " << date.getHours() << ":" << date.getMinutes() << ":" << date.getSeconds() << endl;
     return os;

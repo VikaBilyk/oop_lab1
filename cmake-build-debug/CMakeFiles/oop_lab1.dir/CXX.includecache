@@ -6,19 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.cpp
+Date.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+iostream
+-
+
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
 iostream
 -
 vector
 -
-
-/Users/viktoriyabilyk/CLionProjects/oop_lab1/Sort.h
-Date.h
-/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
-
-/Users/viktoriyabilyk/CLionProjects/oop_lab1/main.cpp
-Date.h
-/Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
-Sort.h
-/Users/viktoriyabilyk/CLionProjects/oop_lab1/Sort.h
 

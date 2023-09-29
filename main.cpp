@@ -25,29 +25,32 @@ int main() {
         Date currentDate(2023, 9, 29, 15, 30, 45);
         Date anotherDate(2023, 8, 15, 10, 15, 30);
 
-        // Виводимо поточну дату та іншу дату
+        // Виводення поточної дати та іншої дати
         cout << "Current Date: ";
         cout << currentDate << endl;
 
         cout << "Another Date: ";
         cout << anotherDate << endl;
-        // Обчислюємо різницю між датами
+
+        // Обчислення різниці між датами
+        //Виглядає як dateDifference = currentDate-anotherDate
         Date dateDifference = currentDate.timeDifference(anotherDate);
         cout<<'\n';
 
 
-        // Додаємо різницю до іншої дати
+        // Додавання різниці до поточної дати
+        //currentDate = currentDate + dateDifference;
         currentDate.addTimeDifference(dateDifference);
         cout << "After adding time difference to current Date: \n";
         cout << currentDate << endl;
 
-        // Віднімаємо різницю від поточної дати
+        // Віднімання різниці від поточної дати
+        // currentDate = currentDate - dateDifference
         currentDate.subtractTimeDifference(dateDifference);
         cout << "After subtracting time difference from Current Date: \n";
         cout << currentDate << endl;
         cout << "______________________________________\n";
 
-        //
 
         cout << "Sorting\n";
         vector<Date> dates;
@@ -58,8 +61,6 @@ int main() {
         dates.push_back(Date(2013, 10, 29, 8, 45, 0));
 
 
-
-        // Використовуйте різні компаратори та алгоритми сортування
         SortDate::insertionSort(dates, SortDate::compareByYear);  // Сортування за роком
         cout << "______________________________________\n";
         cout << "Sort by year - insertion sort\n";
@@ -91,26 +92,4 @@ int main() {
         cout << "______________________________________\n";
         return 0;
 
-
-//#include <iostream>
-//#include <vector>
-//#include "Date.h"
-//#include "Sort.h"
-//using namespace std;
-//
-//void printDates(const std::vector<Date>& dates) {
-//    for (const Date& date : dates) {
-//        std::cout << date << std::endl;
-//    }
-//}
-//
-//int main() {
-//    Date currentDate(2026, 9, 28, 15, 30, 45, "Current Date");
-//    Date anotherDate(2023, 8, 15, 10, 15, 30, "Another Date");
-//
-//    int choice;
-//    do {
-
-//
-//    return 0;
     }

@@ -75,5 +75,6 @@ public:
     // Перевантажений оператор виводу, щоб можна було виводити об'єкти Date у потік.
     friend ostream& operator << (ostream& os, const Date& date);
 
+    // Перевантажений оператор вводу, щоб можна було вводити об'єкти Date у потік.
     friend istream& operator>>(istream& in, Date& date);
 };
