@@ -22,6 +22,44 @@ string
 Date.h
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
 
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.cpp
+EventManager.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.h
+iostream
+-
+string
+-
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.h
+SortingContext.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+Event.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+vector
+-
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.cpp
+InsertionSort.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.h
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.h
+SortingStrategy.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.cpp
+SortingContext.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+SortingStrategy.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
+
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
+vector
+-
+Event.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.h
 
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/main.cpp
@@ -33,4 +71,10 @@ Time.h
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.h
 Event.h
 /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+EventManager.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.h
+SortingContext.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+InsertionSort.h
+/Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.h
 

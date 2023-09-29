@@ -3,6 +3,7 @@
 //
 
 #include "Date.h"
+
 Date::Date(int y, int m, int d, int h, int min, int sec)
 :year(y), month(m), day(d), hour(h), minute(min), second(sec) {}
 
@@ -25,6 +26,12 @@ int Date::getWeekNumber(){
     int y = year - a;
     int m = month + 12 * a - 2;
     return (day + y + y/4 - y/100 + y/400 + (31 * m) / 12) % 7;
+}
+
+bool Date::toString() const {
+    return false;
+
+
 }
 
 

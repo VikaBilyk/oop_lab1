@@ -103,49 +103,34 @@ CMakeFiles/oop_lab1.dir/Date.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab1.dir/Date.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.cpp -o CMakeFiles/oop_lab1.dir/Date.cpp.s
 
-CMakeFiles/oop_lab1.dir/Event.cpp.o: CMakeFiles/oop_lab1.dir/flags.make
-CMakeFiles/oop_lab1.dir/Event.cpp.o: ../Event.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/viktoriyabilyk/CLionProjects/oop_lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/oop_lab1.dir/Event.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab1.dir/Event.cpp.o -c /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.cpp
+CMakeFiles/oop_lab1.dir/Sort.cpp.o: CMakeFiles/oop_lab1.dir/flags.make
+CMakeFiles/oop_lab1.dir/Sort.cpp.o: ../Sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/viktoriyabilyk/CLionProjects/oop_lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/oop_lab1.dir/Sort.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab1.dir/Sort.cpp.o -c /Users/viktoriyabilyk/CLionProjects/oop_lab1/Sort.cpp
 
-CMakeFiles/oop_lab1.dir/Event.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab1.dir/Event.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.cpp > CMakeFiles/oop_lab1.dir/Event.cpp.i
+CMakeFiles/oop_lab1.dir/Sort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab1.dir/Sort.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/viktoriyabilyk/CLionProjects/oop_lab1/Sort.cpp > CMakeFiles/oop_lab1.dir/Sort.cpp.i
 
-CMakeFiles/oop_lab1.dir/Event.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab1.dir/Event.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.cpp -o CMakeFiles/oop_lab1.dir/Event.cpp.s
-
-CMakeFiles/oop_lab1.dir/Time.cpp.o: CMakeFiles/oop_lab1.dir/flags.make
-CMakeFiles/oop_lab1.dir/Time.cpp.o: ../Time.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/viktoriyabilyk/CLionProjects/oop_lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/oop_lab1.dir/Time.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab1.dir/Time.cpp.o -c /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.cpp
-
-CMakeFiles/oop_lab1.dir/Time.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab1.dir/Time.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.cpp > CMakeFiles/oop_lab1.dir/Time.cpp.i
-
-CMakeFiles/oop_lab1.dir/Time.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab1.dir/Time.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.cpp -o CMakeFiles/oop_lab1.dir/Time.cpp.s
+CMakeFiles/oop_lab1.dir/Sort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab1.dir/Sort.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/viktoriyabilyk/CLionProjects/oop_lab1/Sort.cpp -o CMakeFiles/oop_lab1.dir/Sort.cpp.s
 
 # Object files for target oop_lab1
 oop_lab1_OBJECTS = \
 "CMakeFiles/oop_lab1.dir/main.cpp.o" \
 "CMakeFiles/oop_lab1.dir/Date.cpp.o" \
-"CMakeFiles/oop_lab1.dir/Event.cpp.o" \
-"CMakeFiles/oop_lab1.dir/Time.cpp.o"
+"CMakeFiles/oop_lab1.dir/Sort.cpp.o"
 
 # External object files for target oop_lab1
 oop_lab1_EXTERNAL_OBJECTS =
 
 oop_lab1: CMakeFiles/oop_lab1.dir/main.cpp.o
 oop_lab1: CMakeFiles/oop_lab1.dir/Date.cpp.o
-oop_lab1: CMakeFiles/oop_lab1.dir/Event.cpp.o
-oop_lab1: CMakeFiles/oop_lab1.dir/Time.cpp.o
+oop_lab1: CMakeFiles/oop_lab1.dir/Sort.cpp.o
 oop_lab1: CMakeFiles/oop_lab1.dir/build.make
 oop_lab1: CMakeFiles/oop_lab1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/viktoriyabilyk/CLionProjects/oop_lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable oop_lab1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/viktoriyabilyk/CLionProjects/oop_lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable oop_lab1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/oop_lab1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

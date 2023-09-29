@@ -170,59 +170,32 @@ Date.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Date.cpp.s
 .PHONY : Date.cpp.s
 
-Event.o: Event.cpp.o
+Sort.o: Sort.cpp.o
 
-.PHONY : Event.o
-
-# target to build an object file
-Event.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.o
-.PHONY : Event.cpp.o
-
-Event.i: Event.cpp.i
-
-.PHONY : Event.i
-
-# target to preprocess a source file
-Event.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.i
-.PHONY : Event.cpp.i
-
-Event.s: Event.cpp.s
-
-.PHONY : Event.s
-
-# target to generate assembly for a file
-Event.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Event.cpp.s
-.PHONY : Event.cpp.s
-
-Time.o: Time.cpp.o
-
-.PHONY : Time.o
+.PHONY : Sort.o
 
 # target to build an object file
-Time.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Time.cpp.o
-.PHONY : Time.cpp.o
+Sort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Sort.cpp.o
+.PHONY : Sort.cpp.o
 
-Time.i: Time.cpp.i
+Sort.i: Sort.cpp.i
 
-.PHONY : Time.i
+.PHONY : Sort.i
 
 # target to preprocess a source file
-Time.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Time.cpp.i
-.PHONY : Time.cpp.i
+Sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Sort.cpp.i
+.PHONY : Sort.cpp.i
 
-Time.s: Time.cpp.s
+Sort.s: Sort.cpp.s
 
-.PHONY : Time.s
+.PHONY : Sort.s
 
 # target to generate assembly for a file
-Time.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Time.cpp.s
-.PHONY : Time.cpp.s
+Sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/oop_lab1.dir/build.make CMakeFiles/oop_lab1.dir/Sort.cpp.s
+.PHONY : Sort.cpp.s
 
 main.o: main.cpp.o
 
@@ -263,12 +236,9 @@ help:
 	@echo "... Date.o"
 	@echo "... Date.i"
 	@echo "... Date.s"
-	@echo "... Event.o"
-	@echo "... Event.i"
-	@echo "... Event.s"
-	@echo "... Time.o"
-	@echo "... Time.i"
-	@echo "... Time.s"
+	@echo "... Sort.o"
+	@echo "... Sort.i"
+	@echo "... Sort.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

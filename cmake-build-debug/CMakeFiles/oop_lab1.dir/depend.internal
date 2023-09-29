@@ -8,11 +8,34 @@ CMakeFiles/oop_lab1.dir/Event.cpp.o
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.cpp
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+CMakeFiles/oop_lab1.dir/EventManager.cpp.o
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.cpp
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
+CMakeFiles/oop_lab1.dir/InsertionSort.cpp.o
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.cpp
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
+CMakeFiles/oop_lab1.dir/SortingContext.cpp.o
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.cpp
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
 CMakeFiles/oop_lab1.dir/Time.cpp.o
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.cpp
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.h
 CMakeFiles/oop_lab1.dir/main.cpp.o
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Date.h
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Event.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/EventManager.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/InsertionSort.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingContext.h
+ /Users/viktoriyabilyk/CLionProjects/oop_lab1/SortingStrategy.h
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/Time.h
  /Users/viktoriyabilyk/CLionProjects/oop_lab1/main.cpp
