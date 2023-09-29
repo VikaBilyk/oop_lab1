@@ -54,24 +54,6 @@ public:
     // Отримання номера тижня в році для поточної дати.
     int getWeekOfYear() const;
 
-    // Встановлення року для поточного об'єкта Date.
-    void setYear(int y);
-
-    // Встановлення місяця для поточного об'єкта Date.
-    void setMonth(int m);
-
-    // Встановлення дня для поточного об'єкта Date.
-    void setDay(int d);
-
-    // Встановлення годин для поточного об'єкта Date.
-    void setHours(int h);
-
-    // Встановлення хвилин для поточного об'єкта Date.
-    void setMinutes(int min);
-
-    // Встановлення секунд для поточного об'єкта Date.
-    void setSeconds(int sec);
-
     // Отримання значення року для поточного об'єкта Date.
     int getYear() const;
 

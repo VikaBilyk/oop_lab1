@@ -10,9 +10,6 @@ Date::Date(int y, int m, int d, int h, int min, int sec)
         : year(y), month(m), day(d), hours(h), minutes(min), seconds(sec) {}
 
 
-
-
-
 bool Date::isDateValid(int year, int month, int day) {
     if (year < 1 || month < 1 || month > 12 || day < 1)
         return false;
@@ -178,53 +175,6 @@ int Date::getWeekOfYear() const {
     return weekNumber;
 }
 
-void Date::setYear(int y) {
-    if (y < 1) {
-        // Обробка помилки встановлення року
-    } else {
-        year = y;
-    }
-}
-
-void Date::setMonth(int m) {
-    if (m < 1 || m > 12) {
-        // Обробка помилки встановлення місяця
-    } else {
-        month = m;
-    }
-}
-
-void Date::setDay(int d) {
-    if (d < 1 || d > daysInMonth[month - 1]) {
-        // Обробка помилки встановлення дня
-    } else {
-        day = d;
-    }
-}
-
-void Date::setHours(int h) {
-    if (h < 0 || h > 24) {
-        // Обробка помилки встановлення годин
-    } else {
-        hours = h;
-    }
-}
-
-void Date::setMinutes(int min) {
-    if (min < 0 || min > 60) {
-        // Обробка помилки встановлення хвилин
-    } else {
-        minutes = min;
-    }
-}
-
-void Date::setSeconds(int sec) {
-    if (sec < 0 || sec > 60) {
-        // Обробка помилки встановлення секунд
-    } else {
-        seconds = sec;
-    }
-}
 
 int Date::getYear() const {
     return year;
