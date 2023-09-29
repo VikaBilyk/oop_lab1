@@ -4,11 +4,11 @@
 CMakeFiles/oop_lab1.dir/Date.cpp.o: ../Date.cpp
 CMakeFiles/oop_lab1.dir/Date.cpp.o: ../Date.h
 
+CMakeFiles/oop_lab1.dir/Sort.cpp.o: ../Date.h
 CMakeFiles/oop_lab1.dir/Sort.cpp.o: ../Sort.cpp
 CMakeFiles/oop_lab1.dir/Sort.cpp.o: ../Sort.h
-CMakeFiles/oop_lab1.dir/Sort.cpp.o: ../date.h
 
+CMakeFiles/oop_lab1.dir/main.cpp.o: ../Date.h
 CMakeFiles/oop_lab1.dir/main.cpp.o: ../Sort.h
-CMakeFiles/oop_lab1.dir/main.cpp.o: ../date.h
 CMakeFiles/oop_lab1.dir/main.cpp.o: ../main.cpp
 

@@ -1,152 +1,64 @@
-//
-// Created by Вікторія Білик on 29.09.2023.
-//
-
 #ifndef OOP_LAB1_SORT_H
 #define OOP_LAB1_SORT_H
 
-#include "date.h"
+#include "Date.h"
+
 class SortDate {
 public:
-
     // Компаратори для порівняння об'єктів Date
-    static bool compareByYear(const Date& date1, const Date& date2) {
-        return date1.getYear() < date2.getYear();
-    }
 
-    static bool compareByMonth(const Date& date1, const Date& date2) {
-        return date1.getMonth() < date2.getMonth();
-    }
+    // Порівняння за роком.
+    static bool compareByYear(const Date& date1, const Date& date2);
 
-    static bool compareByDay(const Date& date1, const Date& date2) {
-        return date1.getDay() < date2.getDay();
-    }
+    // Порівняння за місяцем.
+    static bool compareByMonth(const Date& date1, const Date& date2);
 
-    static bool compareByHours(const Date& date1, const Date& date2) {
-        return date1.getHours() < date2.getHours();
-    }
+    // Порівняння за днем.
+    static bool compareByDay(const Date& date1, const Date& date2);
 
-    static bool compareByMinutes(const Date& date1, const Date& date2) {
-        return date1.getMinutes() < date2.getMinutes();
-    }
+    // Порівняння за годинами.
+    static bool compareByHours(const Date& date1, const Date& date2);
 
-    static bool compareBySeconds(const Date& date1, const Date& date2) {
-        return date1.getSeconds() < date2.getSeconds();
-    }
 
-    // Алгоритм сортування вставками (insertion sort)
-    static void insertionSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
-        int n = dates.size();
-        for (int i = 1; i < n; i++) {
-            Date key = dates[i];
-            int j = i - 1;
-            while (j >= 0 && compareFunc(dates[j], key)) {
-                dates[j + 1] = dates[j];
-                j--;
-            }
-            dates[j + 1] = key;
-        }
-    }
+    /*------ Алгоритм сортування вставками (insertion sort) -------*/
 
-    // Алгоритм сортування quicksort
-    static void quickSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
-        quickSortRecursive(dates, 0, dates.size() - 1, compareFunc);
-    }
+    // Сортування вектора дат за допомогою алгоритму сортування вставками.
+    // Параметр compareFunc - функція-компаратор, яка визначає, за яким критерієм порівнювати дати.
+    static void insertionSort(std::vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&));
 
-    static void quickSortRecursive(vector<Date>& dates, int low, int high, bool (*compareFunc)(const Date&, const Date&)) {
-        if (low < high) {
-            int pivotIndex = partition(dates, low, high, compareFunc);
-            quickSortRecursive(dates, low, pivotIndex - 1, compareFunc);
-            quickSortRecursive(dates, pivotIndex + 1, high, compareFunc);
-        }
-    }
 
-    static int partition(vector<Date>& dates, int low, int high, bool (*compareFunc)(const Date&, const Date&)) {
-        Date pivot = dates[high];
-        int i = low - 1;
-        for (int j = low; j < high; j++) {
-            if (compareFunc(dates[j], pivot)) {
-                i++;
-                swap(dates[i], dates[j]);
-            }
-        }
-        swap(dates[i + 1], dates[high]);
-        return i + 1;
-    }
+    /*------- Алгоритм сортування quicksort ---------*/
 
-    // Алгоритм сортування merge sort
-    static void mergeSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
-        mergeSortRecursive(dates, 0, dates.size() - 1, compareFunc);
-    }
+    // Головна функція для сортування вектора дат за допомогою алгоритму quicksort.
+    static void quickSort(std::vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&));
 
-    static void mergeSortRecursive(vector<Date>& dates, int low, int high, bool (*compareFunc)(const Date&, const Date&)) {
-        if (low < high) {
-            int mid = low + (high - low) / 2;
-            mergeSortRecursive(dates, low, mid, compareFunc);
-            mergeSortRecursive(dates, mid + 1, high, compareFunc);
-            merge(dates, low, mid, high, compareFunc);
-        }
-    }
+    // Рекурсивна функція для сортування підмасиву методом quicksort.
+    static void quickSortRecursive(std::vector<Date>& dates, int low, int high, bool (*compareFunc)
+    (const Date&, const Date&));
 
-    static void merge(vector<Date>& dates, int low, int mid, int high, bool (*compareFunc)(const Date&, const Date&)) {
-        int n1 = mid - low + 1;
-        int n2 = high - mid;
+    // Внутрішня функція для розділення масиву під частини для алгоритму quicksort.
+    static int partition(std::vector<Date>& dates, int low, int high, bool (*compareFunc)
+    (const Date&, const Date&));
 
-        vector<Date> left(n1);
-        vector<Date> right(n2);
 
-        for (int i = 0; i < n1; i++) {
-            left[i] = dates[low + i];
-        }
-        for (int j = 0; j < n2; j++) {
-            right[j] = dates[mid + 1 + j];
-        }
+    /*------- Алгоритм сортування merge sort -----------*/
 
-        int i = 0;
-        int j = 0;
-        int k = low;
+    // Головна функція для сортування вектора дат за допомогою алгоритму merge sort.
+    static void mergeSort(std::vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&));
 
-        while (i < n1 && j < n2) {
-            if (compareFunc(left[i], right[j])) {
-                dates[k] = left[i];
-                i++;
-            } else {
-                dates[k] = right[j];
-                j++;
-            }
-            k++;
-        }
+    // Рекурсивна функція для сортування підмасиву методом merge sort.
+    static void mergeSortRecursive(std::vector<Date>& dates, int low, int high, bool (*compareFunc)
+    (const Date&, const Date&));
 
-        while (i < n1) {
-            dates[k] = left[i];
-            i++;
-            k++;
-        }
+    // Внутрішня функція для об'єднання двох підмасивів у відсортований масив.
+    static void merge(std::vector<Date>& dates, int low, int mid, int high, bool (*compareFunc)
+    (const Date&, const Date&));
 
-        while (j < n2) {
-            dates[k] = right[j];
-            j++;
-            k++;
-        }
-    }
+    /*---------- Алгоритм сортування bubble sort ----------*/
 
-    // Алгоритм сортування bubble sort
-    static void bubbleSort(vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&)) {
-        int n = dates.size();
-        bool swapped;
-        for (int i = 0; i < n - 1; i++) {
-            swapped = false;
-            for (int j = 0; j < n - i - 1; j++) {
-                if (compareFunc(dates[j], dates[j + 1])) {
-                    swap(dates[j], dates[j + 1]);
-                    swapped = true;
-                }
-            }
-            if (!swapped) {
-                break;
-            }
-        }
-    }
+    // Сортування вектора дат за допомогою алгоритму сортування методом "бульбашки".
+    static void bubbleSort(std::vector<Date>& dates, bool (*compareFunc)(const Date&, const Date&));
 };
+
 
 #endif //OOP_LAB1_SORT_H

@@ -1,31 +1,36 @@
-//
-// Created by Вікторія Білик on 24.09.2023.
-//
-
-//#include "Date.h"
-//
-//
-//
-//std::vector<std::string> Date::daysOfWeek = {
-//        "Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"
-//};
 
 #include "Date.h"
 #include <iostream>
 
-std::vector<std::string> Date::daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+vector<std::string> Date::daysOfWeek = {"Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"};
 
-Date::Date() : year(0), month(0), day(0), hours(0), minutes(0), seconds(0), description("") {}
+Date::Date() : year(0), month(0), day(0), hours(0), minutes(0), seconds(0) {}
 
-Date::Date(int y, int m, int d, int h, int min, int sec, string des)
-        : year(y), month(m), day(d), hours(h), minutes(min), seconds(sec), description(des) {}
+Date::Date(int y, int m, int d, int h, int min, int sec)
+        : year(y), month(m), day(d), hours(h), minutes(min), seconds(sec) {}
+
+
+
+
 
 bool Date::isDateValid(int year, int month, int day) {
     if (year < 1 || month < 1 || month > 12 || day < 1)
         return false;
 
     if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
-        return day <= 29;
+        return day <= 29; //високосний рік
+    } else if (day >= daysInMonth[month - 1]) {
+        return false;
+    }
+
+    return true;
+}
+bool Date::isDateValid(){
+    if (year < 1 || month < 1 || month > 12 || day < 1)
+        return false;
+
+    if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
+        return day <= 29; //високосний рік
     } else if (day >= daysInMonth[month - 1]) {
         return false;
     }
@@ -33,18 +38,16 @@ bool Date::isDateValid(int year, int month, int day) {
     return true;
 }
 
-std::ostream& operator<<(std::ostream& os, const Date& date) {
-    os << date.getYear() << "-" << date.getMonth() << "-" << date.getDay() << " ";
-    os << "Week " << date.getWeekOfMonth() << " "; // Виводимо номер тижня в місяці
-    os << Date::daysOfWeek[date.getDayOfWeek()] << " "; // Виводимо назву дня тижня
-    os << date.getHours() << ":" << date.getMinutes() << ":" << date.getSeconds();
-    return os;
-}
-
 bool Date::isTimeValid() const {
     return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);
 }
-
+bool Date::isTimeValid(int hours, int minutes, int seconds) const {
+    return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);
+}
+void Date::timeDifferencePrint()const{
+    cout << "Time Difference: "<< year << "-" << month << "-" << day << " " << hours << ":" << minutes
+    << ":" << seconds<<'\n';
+}
 Date Date::timeDifference(const Date& otherDate) const {
     int diffYears = year - otherDate.year;
     int diffMonths = month - otherDate.month;
@@ -77,7 +80,8 @@ Date Date::timeDifference(const Date& otherDate) const {
     }
 
     // Створюємо та повертаємо новий об'єкт Date з різницею
-    Date difference(diffYears, diffMonths, diffDays, diffHours, diffMinutes, diffSeconds, "");
+    Date difference(diffYears, diffMonths, diffDays, diffHours, diffMinutes, diffSeconds);
+    difference.timeDifferencePrint();
     return difference;
 }
 
@@ -246,7 +250,19 @@ int Date::getSeconds() const {
     return seconds;
 }
 
-string Date::getDescription() const {
-    return description;
+ostream& operator<<(std::ostream& os, const Date& date) {
+    os << date.getYear() << "-" << date.getMonth() << "-" << date.getDay() << "; "
+       <<"week num in mon: " << date.getWeekOfMonth() << "; " // Виводимо номер тижня в місяці
+       << Date::daysOfWeek[date.getDayOfWeek()] << "; " // Виводимо назву дня тижня
+       << "Week num in year: " << date.getWeekOfYear() << ";"
+       << " time: " << date.getHours() << ":" << date.getMinutes() << ":" << date.getSeconds() << endl;
+    return os;
 }
+
+istream& operator>>(istream& in, Date& date){
+    in >> date.year >> date.month >> date.day >> date.hours >> date.minutes >> date.seconds;
+    return in;
+}
+
+
 
