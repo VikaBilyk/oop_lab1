@@ -2,36 +2,251 @@
 // Created by Вікторія Білик on 24.09.2023.
 //
 
+//#include "Date.h"
+//
+//
+//
+//std::vector<std::string> Date::daysOfWeek = {
+//        "Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"
+//};
+
 #include "Date.h"
+#include <iostream>
 
-Date::Date(int y, int m, int d, int h, int min, int sec)
-:year(y), month(m), day(d), hour(h), minute(min), second(sec) {}
+std::vector<std::string> Date::daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-bool Date::is_date_correct() {
-        //Базовий випадок
-        if (year < 1 or month < 1 or month > 12 or day < 1) {
-            return false;
-        }
-        static const int days_in_month[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+Date::Date() : year(0), month(0), day(0), hours(0), minutes(0), seconds(0), description("") {}
 
-        if (month == 2 and ((year % 400 == 0 and (year % 100 != 0 or year % 4 == 0))))
-            return day <= 29;
-        else
-            return day <= days_in_month[month];
+Date::Date(int y, int m, int d, int h, int min, int sec, string des)
+        : year(y), month(m), day(d), hours(h), minutes(min), seconds(sec), description(des) {}
+
+bool Date::isDateValid(int year, int month, int day) {
+    if (year < 1 || month < 1 || month > 12 || day < 1)
+        return false;
+
+    if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
+        return day <= 29;
+    } else if (day >= daysInMonth[month - 1]) {
+        return false;
+    }
+
+    return true;
 }
 
-int Date::getWeekNumber(){
+std::ostream& operator<<(std::ostream& os, const Date& date) {
+    os << date.getYear() << "-" << date.getMonth() << "-" << date.getDay() << " ";
+    os << "Week " << date.getWeekOfMonth() << " "; // Виводимо номер тижня в місяці
+    os << Date::daysOfWeek[date.getDayOfWeek()] << " "; // Виводимо назву дня тижня
+    os << date.getHours() << ":" << date.getMinutes() << ":" << date.getSeconds();
+    return os;
+}
 
+bool Date::isTimeValid() const {
+    return (hours >= 0 && hours <= 24 && minutes >= 0 && minutes <= 60 && seconds >= 0 && seconds <= 60);
+}
+
+Date Date::timeDifference(const Date& otherDate) const {
+    int diffYears = year - otherDate.year;
+    int diffMonths = month - otherDate.month;
+    int diffDays = day - otherDate.day;
+    int diffHours = hours - otherDate.hours;
+    int diffMinutes = minutes - otherDate.minutes;
+    int diffSeconds = seconds - otherDate.seconds;
+
+    // Обробка випадку, коли різниця менша за 0
+    while (diffSeconds < 0) {
+        diffMinutes--;
+        diffSeconds += 60;
+    }
+    while (diffMinutes < 0) {
+        diffHours--;
+        diffMinutes += 60;
+    }
+    while (diffHours < 0) {
+        diffDays--;
+        diffHours += 24;
+    }
+    while (diffDays < 0) {
+        diffMonths--;
+        int lastMonthDays = daysInMonth[(month - 2 + 12) % 12];
+        diffDays += lastMonthDays;
+    }
+    while (diffMonths < 0) {
+        diffYears--;
+        diffMonths += 12;
+    }
+
+    // Створюємо та повертаємо новий об'єкт Date з різницею
+    Date difference(diffYears, diffMonths, diffDays, diffHours, diffMinutes, diffSeconds, "");
+    return difference;
+}
+
+void Date::addTimeDifference(const Date& timeDiff) {
+    year += timeDiff.year;
+    month += timeDiff.month;
+    day += timeDiff.day;
+    hours += timeDiff.hours;
+    minutes += timeDiff.minutes;
+    seconds += timeDiff.seconds;
+
+    // Обробка переповнень
+    while (seconds >= 60) {
+        minutes += seconds / 60;
+        seconds %= 60;
+    }
+    while (minutes >= 60) {
+        hours += minutes / 60;
+        minutes %= 60;
+    }
+    while (hours >= 24) {
+        day += hours / 24;
+        hours %= 24;
+    }
+    while (day > daysInMonth[month - 1]) {
+        day -= daysInMonth[month - 1];
+        month++;
+        if (month > 12) {
+            year++;
+            month = 1;
+        }
+    }
+}
+
+void Date::subtractTimeDifference(const Date& timeDiff) {
+    year -= timeDiff.year;
+    month -= timeDiff.month;
+    day -= timeDiff.day;
+    hours -= timeDiff.hours;
+    minutes -= timeDiff.minutes;
+    seconds -= timeDiff.seconds;
+
+    // Обробка випадку, коли значення стають від'ємними
+    while (seconds < 0) {
+        minutes--;
+        seconds += 60;
+    }
+    while (minutes < 0) {
+        hours--;
+        minutes += 60;
+    }
+    while (hours < 0) {
+        day--;
+        hours += 24;
+    }
+    while (day < 1) {
+        month--;
+        if (month < 1) {
+            year--;
+            month = 12;
+        }
+        int lastMonthDays = daysInMonth[(month - 1 + 12) % 12];
+        day += lastMonthDays;
+    }
+    while (month < 1) {
+        year--;
+        month += 12;
+    }
+}
+
+int Date::getDayOfWeek() const {
     int a = (14 - month) / 12;
     int y = year - a;
     int m = month + 12 * a - 2;
-    return (day + y + y/4 - y/100 + y/400 + (31 * m) / 12) % 7;
+    int dayOfWeek = (day + y + y / 4 - y / 100 + y / 400 + (31 * m) / 12) % 7;
+    return dayOfWeek;
 }
 
-bool Date::toString() const {
-    return false;
-
-
+int Date::getWeekOfMonth() const {
+    int dayOfWeek = getDayOfWeek();
+    int weekNumber = (day + dayOfWeek - 1) / 7 + 1;
+    return weekNumber;
 }
 
+int Date::getWeekOfYear() const {
+    int dayOfWeek = getDayOfWeek();
+    int dayOfYear = 0;
+    for (int i = 1; i < month; i++) {
+        dayOfYear += daysInMonth[i - 1];
+    }
+    dayOfYear += day;
+
+    int weekNumber = (dayOfYear + dayOfWeek - 1) / 7 + 1;
+    return weekNumber;
+}
+
+void Date::setYear(int y) {
+    if (y < 1) {
+        // Обробка помилки встановлення року
+    } else {
+        year = y;
+    }
+}
+
+void Date::setMonth(int m) {
+    if (m < 1 || m > 12) {
+        // Обробка помилки встановлення місяця
+    } else {
+        month = m;
+    }
+}
+
+void Date::setDay(int d) {
+    if (d < 1 || d > daysInMonth[month - 1]) {
+        // Обробка помилки встановлення дня
+    } else {
+        day = d;
+    }
+}
+
+void Date::setHours(int h) {
+    if (h < 0 || h > 24) {
+        // Обробка помилки встановлення годин
+    } else {
+        hours = h;
+    }
+}
+
+void Date::setMinutes(int min) {
+    if (min < 0 || min > 60) {
+        // Обробка помилки встановлення хвилин
+    } else {
+        minutes = min;
+    }
+}
+
+void Date::setSeconds(int sec) {
+    if (sec < 0 || sec > 60) {
+        // Обробка помилки встановлення секунд
+    } else {
+        seconds = sec;
+    }
+}
+
+int Date::getYear() const {
+    return year;
+}
+
+int Date::getMonth() const {
+    return month;
+}
+
+int Date::getDay() const {
+    return day;
+}
+
+int Date::getHours() const {
+    return hours;
+}
+
+int Date::getMinutes() const {
+    return minutes;
+}
+
+int Date::getSeconds() const {
+    return seconds;
+}
+
+string Date::getDescription() const {
+    return description;
+}
 
